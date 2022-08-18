@@ -23,3 +23,18 @@ function playRound(playerSelection, computerSelection){
         alert("You won! " + playerSelection + " beats " + computerSelection + "!");
     }    
 }
+
+function game() {
+    for (let round = 0; round < 5; round++) {
+        playRound();
+    if (round === 4){
+        if (playerScore > computerScore){
+            console.log("Nice! You won the game!")
+        }else if (computerScore > playerScore){
+            console.log("Sorry, you lost the game. ): ")
+        }else{
+            console.log("At least you tied!")
+        }
+        }
+    }
+}
