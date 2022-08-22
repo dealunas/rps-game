@@ -1,0 +1,33 @@
+body{
+    margin:0;
+    background-color:rgb(46, 65, 82);
+    color:white;
+}
+.header{
+    display:flex;
+    padding:25px 200px;
+    justify-content:space-evenly;
+    background-color:rgb(113, 140, 163)
+}
+
+.title{
+    display:flex;
+    font-size:48px;
+    font-weight:bold;
+}
+
+.body{
+    display:flex;
+    padding:50px;
+    font-size:35px;
+    justify-content:center;
+}
+
+.score{
+    display:flex;
+    justify-content:space-around;
+}
+
+.counter{
+    font-size:24px;
+}

@@ -8,25 +8,26 @@ let computerScore = 0;
 
 function playRound(playerSelection, computerSelection){
     playerSelection = prompt("Choose rock, paper, or scissors: ");
+    playerSelection = playerSelection.toLowerCase();
     computerSelection = getComputerChoice();
     if (playerSelection == computerSelection) {
         console.log("Player: " + playerScore + "\n" + "Computer: " + computerScore + "\n" + "Tied");
-        alert("You tied!"); 
+        return("You tied!"); 
     }   else if (playerSelection == "rock" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "scissors"
     || playerSelection == " scissors" && computerSelection == "rock") {
         computerScore = ++computerScore;
         console.log("Player: " + playerScore + "\n" + "Computer: " + computerScore + "\n" + "Computer won");
-        alert("You lost! " + computerSelection + " beats " + playerSelection + "!");
+        return("You lost! " + computerSelection + " beats " + playerSelection + "!");
     }   else {
         playerScore = ++playerScore;
         console.log("Player: " + playerScore + "\n" + "Computer: " + computerScore + "\n" + "Player won");
-        alert("You won! " + playerSelection + " beats " + computerSelection + "!");
+        return("You won! " + playerSelection + " beats " + computerSelection + "!");
     }    
 }
 
 function game() {
     for (let round = 0; round < 5; round++) {
-        playRound();
+        console.log(playRound());
     if (round === 4){
         if (playerScore > computerScore){
             console.log("Nice! You won the game!")
