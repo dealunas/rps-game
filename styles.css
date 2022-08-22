@@ -23,11 +23,21 @@ body{
     justify-content:center;
 }
 
-.score{
+.game{
     display:flex;
     justify-content:space-around;
+    flex-direction:column;
+}
+
+.images{
+    display:flex;
+    justify-content:space-evenly;
+    padding:25px;
 }
 
 .counter{
+    display:flex;
+    justify-content:space-around;
+    padding:25px;
     font-size:24px;
 }
