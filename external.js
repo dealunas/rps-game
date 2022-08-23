@@ -1,15 +1,31 @@
+let playerSelection;
+let computerSelection;
+let playerScore = 0;
+let computerScore = 0;
+let round = 0;
+let buttons = document.querySelectorAll(".images");
+
+buttons.forEach((images) => {
+    images.addEventListener("click", () => {
+        const img = images.querySelector("img");
+        playerSelection = img.alt.toLowerCase();
+
+        playRound(playerSelection, computerSelection);
+
+        if (playerScore === 5 || computerScore === 5) {
+            declareWinner();
+        }
+    });
+});
+
 function getComputerChoice(){
-    const play = ["rock", "paper", "scissors"];
+    const play = ["Rock", "Paper", "Scissors"];
     return play[Math.floor(Math.random() * play.length)];
 }
 
-let playerScore = 0;
-let computerScore = 0;
-
 function playRound(playerSelection, computerSelection){
-    playerSelection = prompt("Choose rock, paper, or scissors: ");
     playerSelection = playerSelection.toLowerCase();
-    computerSelection = getComputerChoice();
+    computerSelection = getComputerChoice().toLowerCase();
     if (playerSelection == computerSelection) {
         console.log("Player: " + playerScore + "\n" + "Computer: " + computerScore + "\n" + "Tied");
         return("You tied!"); 
@@ -25,17 +41,18 @@ function playRound(playerSelection, computerSelection){
     }    
 }
 
-function game() {
+
+function declareWinner() {
     for (let round = 0; round < 5; round++) {
         console.log(playRound());
+    }
     if (round === 4){
-        if (playerScore > computerScore){
-            console.log("Nice! You won the game!")
-        }else if (computerScore > playerScore){
-            console.log("Sorry, you lost the game. ): ")
-        }else{
-            console.log("At least you tied!")
-        }
-        }
+            if (playerScore > computerScore){
+                console.log("Nice! You won the game!")
+            }else if (computerScore > playerScore){
+                console.log("Sorry, you lost the game. ): ")
+            }else{
+                console.log("At least you tied!")
+            }
     }
 }
