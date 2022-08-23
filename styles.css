@@ -35,6 +35,12 @@ body{
     padding:25px;
 }
 
+
+.image-style:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
 .counter{
     display:flex;
     justify-content:space-around;
