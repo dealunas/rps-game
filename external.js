@@ -79,5 +79,18 @@ function capitalize(str) {
 function nextSlide() {
     main.classList.add("disappear");
     endGame.classList.remove("disappear");
-    endBody.classList.add("animate");
+
+    returnMain.addEventListener("click", () => {
+        main.classList.remove("disappear");
+        endGame.classList.add("disappear");
+        resetGame();
+    });
+}
+
+function resetGame() {
+    container.textContent ="";
+    playerScore = 0;
+    computerScore = 0;
+    keepPlayerScore();
+    keepComputerScore();
 }
