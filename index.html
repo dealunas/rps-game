@@ -6,34 +6,40 @@
         <link rel = "stylesheet" href = "styles.css">
     </head>
     <body>
-        <div class = "header">
-            <div class = "title">ROCK</div>
-            <div class = "title">PAPER</div>
-            <div class = "title">SCISSORS</div>
-        </div>
-        <div class = "body">First to score 5 points wins!</div>
-        <div class = "game">
-            <div class = "images">
-                <div id="rock" class="button">
-                    <img src = "images/rock.png" alt = "Rock" height="200px">
-                </div>
-                <div id="paper" class="button">
-                    <img src = "images/paper.png" alt = "Paper" height="200px">
-                </div>
-                <div id="scissors" class="button">
-                    <img src = "images/scissors.png" alt= "Scissors" width="300px">
-                </div>
+        <main id ="main-content">
+            <div class = "header">
+                <div id = "title">ROCK</div>
+                <div id = "title">PAPER</div>
+                <div id = "title">SCISSORS</div>
             </div>
-            <div class = "players">
-                <div id ="player">PLAYER </div>
-                <div id ="computer">COMPUTER </div>
+            <div class = "body">First to score 5 points wins!</div>
+            <div class = "game">
+                <div class = "images">
+                    <div id="rock" class="button">
+                        <img src = "images/rock.png" alt = "Rock" height="200px">
+                    </div>
+                    <div id="paper" class="button">
+                        <img src = "images/paper.png" alt = "Paper" height="200px">
+                    </div>
+                    <div id="scissors" class="button">
+                        <img src = "images/scissors.png" alt= "Scissors" width="300px">
+                    </div>
+                </div>
+                <div class = "players">
+                    <div id ="player">PLAYER </div>
+                    <div id ="computer">COMPUTER </div>
+                </div>
+                <div class="counter">
+                    <div id="player-score">0</div>
+                    <div id="computer-score">0</div>
+                </div>
+                <div id="rounds"></div>
             </div>
-            <div class="counter">
-                <div id="player-score">0</div>
-                <div id="computer-score">0</div>
-            </div>
-            <div id="rounds"></div>
-        </div>
+        </main>
+        <div id="end-game">
+            <div id="end-body" class="animate"></div>
+            <a id="play-again" class="fade-in"></a>
+        </div>  
         <script src="external.js"></script>
     </body>
 </html>

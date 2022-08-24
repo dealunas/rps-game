@@ -10,7 +10,7 @@ body{
     background-color:rgb(113, 140, 163)
 }
 
-.title{
+#title{
     display:flex;
     font-size:48px;
     font-weight:bold;
@@ -62,4 +62,9 @@ body{
     justify-content:center;
     font-size:48px;
     padding-top:50px;
+}
+
+#end-game.disappear,
+.disappear {
+    display:none;
 }

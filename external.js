@@ -4,16 +4,21 @@ let playerScore = 0;
 let computerScore = 0;
 let round = 0;
 let buttons = document.querySelectorAll(".button");
+
+const main = document.querySelector("main");
 const body = document.querySelector("body");
-const container = document.querySelector("#rounds")
+const container = document.querySelector("#rounds");
+const endGame = document.querySelector("#end-game");
+const endBody = document.querySelector("#end-body");
+const returnMain = document.querySelector("#play-again");
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
         const img = button.querySelector("img");
         playerSelection = img.alt.toLowerCase();
-
+    
         playRound(playerSelection, computerSelection);
-
+        
         if (playerScore === 5 || computerScore === 5) {
             declareWinner();
         }
@@ -43,6 +48,7 @@ function playRound(playerSelection, computerSelection){
 };
 
 function declareWinner() {
+    nextSlide();
     if (playerScore > computerScore){
         console.log("Nice! You won the game!")
         }else if (computerScore > playerScore){
@@ -68,4 +74,10 @@ function displayResults(str) {
 
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function nextSlide() {
+    main.classList.add("disappear");
+    endGame.classList.remove("disappear");
+    endBody.classList.add("animate");
 }
