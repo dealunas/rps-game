@@ -50,11 +50,11 @@ function playRound(playerSelection, computerSelection){
 function declareWinner() {
     nextSlide();
     if (playerScore > computerScore){
-        console.log("Nice! You won the game!")
-        }else if (computerScore > playerScore){
-            console.log("Sorry, you lost the game. ): ")
+        endBody.textContent = "Nice! You won the game!"
+        returnMain.textContent = "Play again?"
         }else{
-            console.log("At least you tied!")
+            endBody.textContent = "Sorry, you lost the game. ):"
+            returnMain.textContent = "Try again?"
         }
 };
 

@@ -68,3 +68,31 @@ body{
 .disappear {
     display:none;
 }
+#end-game{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+#end-body{
+    display:flex;
+    font-size:48px;
+    justify-content:center;
+    margin-top:300px;
+}
+
+#play-again{
+    display:inline-block;
+    border-style:solid;
+    padding:15px;
+    margin-top: 25px;
+    border-radius:10px;
+    background-color:rgb(66, 111, 151);
+    border-color:rgb(103, 155, 201);
+    font-size:24px;
+}
+
+#play-again:hover{
+    cursor:pointer;
+    background-color:rgb(93, 106, 131);
+    border-color:rgb(92, 148, 170);
+}
