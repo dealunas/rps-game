@@ -32,18 +32,34 @@ body{
 .images{
     display:flex;
     justify-content:space-evenly;
-    padding:25px;
 }
 
 
-.image-style:hover{
+.button:hover{
     cursor: pointer;
     transform: scale(1.1);
 }
 
+.players{
+    display:flex;
+    justify-content:space-between;
+    padding-top:50px;
+    font-size:48px;
+    margin-left:225px;
+    margin-right:200px;
+}
+
 .counter{
     display:flex;
-    justify-content:space-around;
-    padding:25px;
-    font-size:24px;
+    flex-direction: row;
+    justify-content:space-between;
+    font-size:100px;
+    margin: 0px 300px;
+}
+#rounds{
+    display:flex;
+    height:200px;
+    justify-content:center;
+    font-size:48px;
+    padding-top:50px;
 }

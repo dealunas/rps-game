@@ -3,11 +3,13 @@ let computerSelection;
 let playerScore = 0;
 let computerScore = 0;
 let round = 0;
-let buttons = document.querySelectorAll(".images");
+let buttons = document.querySelectorAll(".button");
+const body = document.querySelector("body");
+const container = document.querySelector("#rounds")
 
-buttons.forEach((images) => {
-    images.addEventListener("click", () => {
-        const img = images.querySelector("img");
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const img = button.querySelector("img");
         playerSelection = img.alt.toLowerCase();
 
         playRound(playerSelection, computerSelection);
@@ -21,38 +23,49 @@ buttons.forEach((images) => {
 function getComputerChoice(){
     const play = ["Rock", "Paper", "Scissors"];
     return play[Math.floor(Math.random() * play.length)];
-}
+};
 
 function playRound(playerSelection, computerSelection){
     playerSelection = playerSelection.toLowerCase();
     computerSelection = getComputerChoice().toLowerCase();
     if (playerSelection == computerSelection) {
-        console.log("Player: " + playerScore + "\n" + "Computer: " + computerScore + "\n" + "Tied");
-        return("You tied!"); 
+        displayResults(`You tied! ${capitalize(playerSelection)} ties with ${computerSelection}.`); 
     }   else if (playerSelection == "rock" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "scissors"
     || playerSelection == " scissors" && computerSelection == "rock") {
         computerScore = ++computerScore;
-        console.log("Player: " + playerScore + "\n" + "Computer: " + computerScore + "\n" + "Computer won");
-        return("You lost! " + computerSelection + " beats " + playerSelection + "!");
+        keepComputerScore();
+        displayResults(`You lost! ${capitalize(computerSelection)} beats ${playerSelection}!`);
     }   else {
         playerScore = ++playerScore;
-        console.log("Player: " + playerScore + "\n" + "Computer: " + computerScore + "\n" + "Player won");
-        return("You won! " + playerSelection + " beats " + computerSelection + "!");
+        keepPlayerScore();
+        displayResults(`You won! ${capitalize(playerSelection)} beats ${computerSelection}!`);
     }    
-}
-
+};
 
 function declareWinner() {
-    for (let round = 0; round < 5; round++) {
-        console.log(playRound());
-    }
-    if (round === 4){
-            if (playerScore > computerScore){
-                console.log("Nice! You won the game!")
-            }else if (computerScore > playerScore){
-                console.log("Sorry, you lost the game. ): ")
-            }else{
-                console.log("At least you tied!")
-            }
-    }
+    if (playerScore > computerScore){
+        console.log("Nice! You won the game!")
+        }else if (computerScore > playerScore){
+            console.log("Sorry, you lost the game. ): ")
+        }else{
+            console.log("At least you tied!")
+        }
+};
+
+function keepPlayerScore(){
+    let playerScoreBox = document.querySelector("#player-score");
+    playerScoreBox.textContent = playerScore;
+}
+
+function keepComputerScore(){
+    let computerScoreBox = document.querySelector("#computer-score");
+    computerScoreBox.textContent = computerScore;
+}
+
+function displayResults(str) {
+    container.textContent = str;
+}
+
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
